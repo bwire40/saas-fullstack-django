@@ -1,5 +1,12 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+# from django.http import HttpResponse
 
 # homepage view
 def home_page_view(request, *args, **kwargs):
-    return HttpResponse("<h1>Hello World!</h1>")
+    my_title="My page"
+    my_context={
+        "page_title":my_title
+    }
+    hmtl_template="home.html"
+    return render(request,hmtl_template,my_context)
+    # return HttpResponse(html_)
