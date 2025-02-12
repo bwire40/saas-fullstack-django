@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Django{% endblock title %}</title>
+
+    {% comment %} include css {% endcomment %}
+    {% include "base/css.html" %}
+    
 </head>
 <body>
+    {% comment %} navbar {% endcomment %}
+    {% include "nav/navbar.html" %}
     {% block content %}
         # content goes here
     {% endblock content %}
-    
+
+    {% comment %} include js {% endcomment %}
+     {% include "base/js.html" %}
 </body>
 </html>
